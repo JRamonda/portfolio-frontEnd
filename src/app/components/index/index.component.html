@@ -1,0 +1,62 @@
+<header>
+  <app-menu></app-menu>
+</header>
+
+<body>
+  <div>
+    <img [src]="banner" class="banner-image img-fluid" alt="Banner">
+    
+  </div>
+
+  <form id="about" name="FormAbout" class="shadow-sm mb-5 rounded p-5 bg-light" [formGroup]="FormAbout">
+    <div class="d-flex">
+      <div class="col-3">
+        <img [src]="logo" class="logo-image img-thumbnail rounded-circle" alt="Logo">
+      </div>
+      <div class="col-6 mt-4">
+        <input class="fs-1 fw-bold font-monospace mb-0" [ngClass]="editableAbout ? 'form-control' : 'form-control-plaintext'" [readonly]="!editableAbout" name="name" formControlName="name" />
+        <input class="fs-5" name="title" [ngClass]="editableAbout ? 'form-control' : 'form-control-plaintext'" [readonly]="!editableAbout" formControlName="title" />
+      </div>
+      <div class="col-2">
+        <div class="d-flex justify-content-end">
+          <button class="btn btn-outline-success btn-size" *ngIf="editable && !editableAbout" (click)="this.editableAbout = !editableAbout"><i class="fa-solid fa-pen fa-1x"></i></button>
+          <button class="btn btn-outline-danger btn-size" *ngIf="editable && editableAbout" (click)="this.editableAbout = !editableAbout; cargarDatos()"><i class="fa-solid fa-xmark fa-1x"></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="mt-4">
+      <textarea rows="3" style="resize: none;" [ngClass]="editableAbout ? 'form-control' : 'form-control-plaintext'" [readonly]="!editableAbout" name="resumen" formControlName="resumen">
+      </textarea>
+    </div>
+    <div class="mt-4">
+      <button class="btn btn-primary" *ngIf="editableAbout"><i class="fa-solid fa-floppy-disk"></i> Guardar</button>
+    </div>
+  </form>
+
+  <div id="experience">
+    <div class="row shadow-sm mb-5 rounded text-sm-center p-5 bg-light">
+      <p class="lead">Esta página está pensada para gestionar turnos de manera practica.</p>
+      <p>Especificamente pensada para peluquerias, para que los clientes puedan sacar sus turnos sin necesidad de contactarse por mensaje o llamada.</p>
+    </div>
+  </div>
+
+  <div id="education">
+    <div class="row shadow-sm mb-5 rounded text-sm-center p-5 bg-light">
+      <p class="lead"></p>
+    </div>
+  </div>
+
+  <div id="skills">
+    <div class="row shadow-sm mb-5 rounded text-sm-center p-5 bg-light">
+      <p class="lead">Esta página está pensada para gestionar turnos de manera practica.</p>
+      <p>Especificamente pensada para peluquerias, para que los clientes puedan sacar sus turnos sin necesidad de contactarse por mensaje o llamada.</p>
+    </div>
+  </div>
+
+  <div id="projects">
+    <div class="row shadow-sm mb-5 rounded text-sm-center p-5 bg-light">
+      <p class="lead">Esta página está pensada para gestionar turnos de manera practica.</p>
+      <p>Especificamente pensada para peluquerias, para que los clientes puedan sacar sus turnos sin necesidad de contactarse por mensaje o llamada.</p>
+    </div>
+  </div>
+</body>
